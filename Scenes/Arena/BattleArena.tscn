@@ -1,0 +1,837 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/UI/vs.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/MangabeyRegular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Arena/BattleArena.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="BattleArena" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerStatsContainer" type="NinePatchRect" parent="NinePatchRect"]
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = 300.0
+rect_min_size = Vector2( 300, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/PlayerStatsContainer"]
+anchor_right = 1.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/PlayerStatsContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
+text = "Your Stats"
+align = 1
+
+[node name="LabelsContainer" type="VBoxContainer" parent="NinePatchRect/PlayerStatsContainer"]
+margin_top = 80.0
+margin_right = 150.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "Name:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="IdLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+text = "ID:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AttackLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 62.0
+margin_right = 150.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 2 )
+text = "Attack:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="IntelligenceLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 93.0
+margin_right = 150.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+text = "Intelligence:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DefenceLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 124.0
+margin_right = 150.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 2 )
+text = "Defence:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MagicDefenceLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 155.0
+margin_right = 150.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 2 )
+text = "Magic defence:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HpLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 186.0
+margin_right = 150.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0.14902, 0.803922, 0.0941176, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "HP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MpLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 217.0
+margin_right = 150.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+text = "MP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HpRegLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 248.0
+margin_right = 150.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 2 )
+text = "HP Reg:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MpRegLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 279.0
+margin_right = 150.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 2 )
+text = "Mp Reg:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="XpLabel" type="Label" parent="NinePatchRect/PlayerStatsContainer/LabelsContainer"]
+margin_top = 310.0
+margin_right = 150.0
+margin_bottom = 337.0
+custom_fonts/font = SubResource( 2 )
+text = "XP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PointsContainer" type="VBoxContainer" parent="NinePatchRect/PlayerStatsContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 80.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="display_name" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="id" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="attack" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 62.0
+margin_right = 150.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="intelligence" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 93.0
+margin_right = 150.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="defence" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 124.0
+margin_right = 150.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="magic_defence" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 155.0
+margin_right = 150.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hp" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 186.0
+margin_right = 150.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0.14902, 0.803922, 0.0941176, 1 )
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mp" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 217.0
+margin_right = 150.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hp_reg" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 248.0
+margin_right = 150.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mp_reg" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 279.0
+margin_right = 150.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="xp" type="Label" parent="NinePatchRect/PlayerStatsContainer/PointsContainer"]
+margin_top = 310.0
+margin_right = 150.0
+margin_bottom = 337.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemyStatsContainer" type="NinePatchRect" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -300.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 300, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/EnemyStatsContainer"]
+anchor_right = 1.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/EnemyStatsContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
+text = "Enemy Stats"
+align = 1
+
+[node name="LabelsContainer" type="VBoxContainer" parent="NinePatchRect/EnemyStatsContainer"]
+margin_top = 80.0
+margin_right = 150.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "Name:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="IdLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+text = "ID:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AttackLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 62.0
+margin_right = 150.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 2 )
+text = "Attack:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="IntelligenceLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 93.0
+margin_right = 150.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+text = "Intelligence:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DefenceLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 124.0
+margin_right = 150.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 2 )
+text = "Defence:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MagicDefenceLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 155.0
+margin_right = 150.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 2 )
+text = "Magic defence:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HpLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 186.0
+margin_right = 150.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0.14902, 0.803922, 0.0941176, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "HP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MpLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 217.0
+margin_right = 150.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+text = "MP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HpRegLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 248.0
+margin_right = 150.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 2 )
+text = "HP Reg:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MpRegLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 279.0
+margin_right = 150.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 2 )
+text = "Mp Reg:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="XpLabel" type="Label" parent="NinePatchRect/EnemyStatsContainer/LabelsContainer"]
+margin_top = 310.0
+margin_right = 150.0
+margin_bottom = 337.0
+custom_fonts/font = SubResource( 2 )
+text = "XP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PointsContainer" type="VBoxContainer" parent="NinePatchRect/EnemyStatsContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 80.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="display_name" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_right = 150.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="id" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 31.0
+margin_right = 150.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="attack" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 62.0
+margin_right = 150.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="intelligence" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 93.0
+margin_right = 150.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="defence" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 124.0
+margin_right = 150.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="magic_defence" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 155.0
+margin_right = 150.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hp" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 186.0
+margin_right = 150.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0.14902, 0.803922, 0.0941176, 1 )
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mp" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 217.0
+margin_right = 150.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hp_reg" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 248.0
+margin_right = 150.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mp_reg" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 279.0
+margin_right = 150.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="xp" type="Label" parent="NinePatchRect/EnemyStatsContainer/PointsContainer"]
+margin_top = 310.0
+margin_right = 150.0
+margin_bottom = 337.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AttackContainer" type="NinePatchRect" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -200.0
+rect_min_size = Vector2( 640, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/AttackContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -38.5
+margin_right = 38.5
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 3 )
+text = "Attack"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/AttackContainer"]
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 180.0
+margin_bottom = 120.0
+color = Color( 0.0470588, 0.0313726, 0.192157, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HeadAttackBtn" type="TextureButton" parent="NinePatchRect/AttackContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/AttackContainer/ColorRect/HeadAttackBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -13.5
+margin_right = 22.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 4 )
+text = "Head"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect2" type="ColorRect" parent="NinePatchRect/AttackContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -20.0
+margin_right = 50.0
+margin_bottom = 20.0
+color = Color( 0.0470588, 0.0313726, 0.192157, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BodyAttackBtn" type="TextureButton" parent="NinePatchRect/AttackContainer/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/AttackContainer/ColorRect2/BodyAttackBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -13.5
+margin_right = 22.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 4 )
+text = "Body"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect3" type="ColorRect" parent="NinePatchRect/AttackContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 140.0
+margin_top = -20.0
+margin_right = 240.0
+margin_bottom = 20.0
+color = Color( 0.0470588, 0.0313726, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LegAttackBtn" type="TextureButton" parent="NinePatchRect/AttackContainer/ColorRect3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/AttackContainer/ColorRect3/LegAttackBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -13.5
+margin_right = 22.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 4 )
+text = "Legs"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DodgeContainer" type="NinePatchRect" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -200.0
+rect_min_size = Vector2( 640, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/DodgeContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -38.5
+margin_right = 38.5
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 3 )
+text = "Dodge"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/DodgeContainer"]
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 180.0
+margin_bottom = 120.0
+color = Color( 0.0470588, 0.0313726, 0.192157, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HeadDodgeBtn" type="TextureButton" parent="NinePatchRect/DodgeContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/DodgeContainer/ColorRect/HeadDodgeBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -13.5
+margin_right = 22.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 4 )
+text = "Head"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect2" type="ColorRect" parent="NinePatchRect/DodgeContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -20.0
+margin_right = 50.0
+margin_bottom = 20.0
+color = Color( 0.0470588, 0.0313726, 0.192157, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BodyDodgeBtn" type="TextureButton" parent="NinePatchRect/DodgeContainer/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/DodgeContainer/ColorRect2/BodyDodgeBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -13.5
+margin_right = 22.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 4 )
+text = "Body"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect3" type="ColorRect" parent="NinePatchRect/DodgeContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 140.0
+margin_top = -20.0
+margin_right = 240.0
+margin_bottom = 20.0
+color = Color( 0.0470588, 0.0313726, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LegDodgeBtn" type="TextureButton" parent="NinePatchRect/DodgeContainer/ColorRect3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/DodgeContainer/ColorRect3/LegDodgeBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -13.5
+margin_right = 22.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 4 )
+text = "Legs"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RoundLabel" type="Label" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -58.0
+margin_top = 20.0
+margin_right = 58.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 5 )
+text = "Round 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="NinePatchRect/AttackContainer/ColorRect/HeadAttackBtn" to="." method="_on_HeadAttackBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/AttackContainer/ColorRect2/BodyAttackBtn" to="." method="_on_BodyAttackBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/AttackContainer/ColorRect3/LegAttackBtn" to="." method="_on_LegAttackBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/DodgeContainer/ColorRect/HeadDodgeBtn" to="." method="_on_HeadDodgeBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/DodgeContainer/ColorRect2/BodyDodgeBtn" to="." method="_on_BodyDodgeBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/DodgeContainer/ColorRect3/LegDodgeBtn" to="." method="_on_LegDodgeBtn_pressed"]

@@ -1,0 +1,701 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Lobby/Lobby.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/spartan.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/madrigal.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/MangabeyRegular.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 4 )
+
+[node name="Lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInfoContainer" type="NinePatchRect" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -300.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 300, 250 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/UserInfoContainer"]
+anchor_right = 1.0
+margin_bottom = 86.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/UserInfoContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="UserInfo" type="Label" parent="NinePatchRect/UserInfoContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 300.0
+margin_bottom = 60.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Info"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsLabelsContainer" type="VBoxContainer" parent="NinePatchRect/UserInfoContainer"]
+margin_top = 86.0
+margin_right = 150.0
+margin_bottom = 206.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisplayName" type="Label" parent="NinePatchRect/UserInfoContainer/StatsLabelsContainer"]
+margin_right = 150.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ID" type="Label" parent="NinePatchRect/UserInfoContainer/StatsLabelsContainer"]
+margin_top = 30.0
+margin_right = 150.0
+margin_bottom = 56.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "ID"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wins" type="Label" parent="NinePatchRect/UserInfoContainer/StatsLabelsContainer"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 86.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Wins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Losses" type="Label" parent="NinePatchRect/UserInfoContainer/StatsLabelsContainer"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 116.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Losses"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePoints" type="Label" parent="NinePatchRect/UserInfoContainer/StatsLabelsContainer"]
+margin_top = 120.0
+margin_right = 150.0
+margin_bottom = 146.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Points"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsPointsContainer" type="VBoxContainer" parent="NinePatchRect/UserInfoContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 86.0
+margin_bottom = 206.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisplayName" type="Label" parent="NinePatchRect/UserInfoContainer/StatsPointsContainer"]
+margin_right = 150.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ID" type="Label" parent="NinePatchRect/UserInfoContainer/StatsPointsContainer"]
+margin_top = 30.0
+margin_right = 150.0
+margin_bottom = 56.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinsPoints" type="Label" parent="NinePatchRect/UserInfoContainer/StatsPointsContainer"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 86.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LossesPoints" type="Label" parent="NinePatchRect/UserInfoContainer/StatsPointsContainer"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 116.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattlePoints" type="Label" parent="NinePatchRect/UserInfoContainer/StatsPointsContainer"]
+margin_top = 120.0
+margin_right = 150.0
+margin_bottom = 146.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateUserInfoTimer" type="Timer" parent="NinePatchRect/UserInfoContainer"]
+wait_time = 5.0
+autostart = true
+
+[node name="CharacterStatsContainer" type="NinePatchRect" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -320.0
+margin_top = 250.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 300, 250 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/CharacterStatsContainer"]
+anchor_right = 1.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsLabel" type="Label" parent="NinePatchRect/CharacterStatsContainer/VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Character"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsLabelsContainer" type="VBoxContainer" parent="NinePatchRect/CharacterStatsContainer"]
+margin_top = 50.0
+margin_right = 150.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_right = 154.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intelligence" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 30.0
+margin_right = 154.0
+margin_bottom = 56.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "intelligence"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Defence" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 60.0
+margin_right = 154.0
+margin_bottom = 86.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Defence"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagicDefence" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 90.0
+margin_right = 154.0
+margin_bottom = 116.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Magic Defence"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 120.0
+margin_right = 154.0
+margin_bottom = 146.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "HP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 150.0
+margin_right = 154.0
+margin_bottom = 176.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "MP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpReg" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 180.0
+margin_right = 154.0
+margin_bottom = 206.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "HP Reg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MpReg" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 210.0
+margin_right = 154.0
+margin_bottom = 236.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "MP Reg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XP" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsLabelsContainer"]
+margin_top = 240.0
+margin_right = 154.0
+margin_bottom = 266.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "XP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatsPointsContainer" type="VBoxContainer" parent="NinePatchRect/CharacterStatsContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 50.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_right = 150.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intelligence" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 30.0
+margin_right = 150.0
+margin_bottom = 56.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Defence" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 86.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagicDefence" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 116.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 120.0
+margin_right = 150.0
+margin_bottom = 146.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 150.0
+margin_right = 150.0
+margin_bottom = 176.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpReg" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 180.0
+margin_right = 150.0
+margin_bottom = 206.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MpReg" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 210.0
+margin_right = 150.0
+margin_bottom = 236.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XP" type="Label" parent="NinePatchRect/CharacterStatsContainer/StatsPointsContainer"]
+margin_top = 240.0
+margin_right = 150.0
+margin_bottom = 266.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitBtnContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -50.0
+rect_min_size = Vector2( 150, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/QuitBtnContainer"]
+margin_right = 150.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+color = Color( 0.458824, 0.0627451, 0.0627451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGameBtn" type="TextureButton" parent="NinePatchRect/QuitBtnContainer/ColorRect"]
+margin_top = 4.0
+margin_right = 150.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 150, 50 )
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/QuitBtnContainer/ColorRect/ExitGameBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -28.5
+margin_top = -15.5
+margin_right = 28.5
+margin_bottom = 15.5
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArenaBtnContainer" type="ColorRect" parent="NinePatchRect"]
+margin_left = 60.0
+margin_top = 43.0
+margin_right = 260.0
+margin_bottom = 93.0
+color = Color( 0.0392157, 0.0509804, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArenaBtn" type="TextureButton" parent="NinePatchRect/ArenaBtnContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/ArenaBtnContainer/ArenaBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -18.0
+margin_right = 34.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "Arena"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TavernBtnContainer" type="ColorRect" parent="NinePatchRect"]
+margin_left = 60.0
+margin_top = 118.0
+margin_right = 260.0
+margin_bottom = 168.0
+color = Color( 0.0392157, 0.0509804, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TavernBtn" type="TextureButton" parent="NinePatchRect/TavernBtnContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/TavernBtnContainer/TavernBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.5
+margin_top = -18.0
+margin_right = 40.5
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 3 )
+text = "Tavern"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LeaderboardBtnContainer" type="ColorRect" parent="NinePatchRect"]
+margin_left = 60.0
+margin_top = 188.0
+margin_right = 260.0
+margin_bottom = 238.0
+color = Color( 0.0392157, 0.0509804, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeaderboardBtn" type="TextureButton" parent="NinePatchRect/LeaderboardBtnContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/LeaderboardBtnContainer/LeaderboardBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -73.5
+margin_top = -18.0
+margin_right = 73.5
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 3 )
+text = "Leaderboard"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarketBtnContainer" type="ColorRect" parent="NinePatchRect"]
+margin_left = 60.0
+margin_top = 250.0
+margin_right = 260.0
+margin_bottom = 300.0
+color = Color( 0.0392157, 0.0509804, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarketBtn" type="TextureButton" parent="NinePatchRect/MarketBtnContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/MarketBtnContainer/MarketBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -18.0
+margin_right = 51.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 3 )
+text = "Market"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialBtnContainer" type="ColorRect" parent="NinePatchRect"]
+margin_left = 60.0
+margin_top = 320.0
+margin_right = 260.0
+margin_bottom = 370.0
+color = Color( 0.0392157, 0.0509804, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialBtn" type="TextureButton" parent="NinePatchRect/TutorialBtnContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/TutorialBtnContainer/TutorialBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -18.0
+margin_right = 51.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 3 )
+text = "Tutorial"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LogoutBtnContainer" type="ColorRect" parent="NinePatchRect"]
+margin_left = 60.0
+margin_top = 500.0
+margin_right = 260.0
+margin_bottom = 550.0
+color = Color( 0.0392157, 0.0509804, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoutBtn" type="TextureButton" parent="NinePatchRect/LogoutBtnContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/LogoutBtnContainer/LogoutBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.0
+margin_top = -18.0
+margin_right = 42.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 3 )
+text = "Logout"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="NinePatchRect/UserInfoContainer/UpdateUserInfoTimer" to="." method="_on_UpdateUserInfoTimer_timeout"]
+[connection signal="pressed" from="NinePatchRect/QuitBtnContainer/ColorRect/ExitGameBtn" to="." method="_on_ExitGameBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/ArenaBtnContainer/ArenaBtn" to="." method="_on_ArenaBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/LeaderboardBtnContainer/LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/TutorialBtnContainer/TutorialBtn" to="." method="_on_TutorialBtn_pressed"]
+[connection signal="pressed" from="NinePatchRect/LogoutBtnContainer/LogoutBtn" to="." method="_on_LogoutBtn_pressed"]

@@ -1,0 +1,250 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Fonts/karasha.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/madrigal.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/UI/login-background.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/btn-disabled.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/btn.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Auth/NewAccountScreen.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="NewAccountScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1280, 720 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -250.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 300, 500 )
+color = Color( 0.0509804, 0.0823529, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="ColorRect/VBoxContainer"]
+margin_right = 270.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 1 )
+text = "Login"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 70.0
+margin_right = 270.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="ErrorMsg" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 94.0
+margin_right = 270.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+autowrap = true
+
+[node name="Username" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 112.0
+margin_right = 270.0
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 2 )
+text = "Username"
+
+[node name="UsernameInput" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_top = 141.0
+margin_right = 270.0
+margin_bottom = 165.0
+
+[node name="Password" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 169.0
+margin_right = 270.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 3 )
+text = "Password"
+
+[node name="PasswordInput" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_top = 198.0
+margin_right = 270.0
+margin_bottom = 222.0
+secret = true
+
+[node name="PasswordRepeat" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 226.0
+margin_right = 270.0
+margin_bottom = 251.0
+custom_fonts/font = SubResource( 3 )
+text = "Repeat the Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordRepeatInput" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_top = 255.0
+margin_right = 270.0
+margin_bottom = 279.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 283.0
+margin_right = 270.0
+margin_bottom = 303.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 307.0
+margin_right = 270.0
+margin_bottom = 338.0
+text = "By clicking the button below you confirm that you are 18 or over."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateAccountBtn" type="TextureButton" parent="ColorRect/VBoxContainer"]
+margin_left = 60.0
+margin_top = 342.0
+margin_right = 210.0
+margin_bottom = 372.0
+rect_min_size = Vector2( 150, 30 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/CreateAccountBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.5
+margin_top = -10.5
+margin_right = 30.5
+margin_bottom = 10.5
+custom_fonts/font = SubResource( 4 )
+text = "Create"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 376.0
+margin_right = 270.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="LoginLink" type="LinkButton" parent="ColorRect/VBoxContainer"]
+margin_top = 400.0
+margin_right = 270.0
+margin_bottom = 414.0
+focus_mode = 2
+text = "Login"
+underline = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -50.0
+rect_min_size = Vector2( 150, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+margin_right = 150.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+color = Color( 0.458824, 0.0627451, 0.0627451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGameBtn" type="TextureButton" parent="VBoxContainer/ColorRect"]
+margin_top = 4.0
+margin_right = 150.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 150, 50 )
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ExitGameBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -28.5
+margin_top = -15.5
+margin_right = 28.5
+margin_bottom = 15.5
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 5 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/CreateAccountBtn" to="." method="_on_CreateAccountBtn_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/LoginLink" to="." method="_on_LoginLink_pressed"]
+[connection signal="pressed" from="VBoxContainer/ColorRect/ExitGameBtn" to="." method="_on_ExitGameBtn_pressed"]

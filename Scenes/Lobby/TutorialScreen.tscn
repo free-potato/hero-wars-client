@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Fonts/MangabeyRegular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/knight.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/Lobby/TutorialScreen.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="TutorialScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -69.0
+margin_top = 20.0
+margin_right = 69.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 1 )
+text = "Tutorial"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect"]
+margin_left = 34.0
+margin_top = 23.0
+margin_right = 234.0
+margin_bottom = 73.0
+color = Color( 0.0235294, 0.027451, 0.176471, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LobbyBtn" type="TextureButton" parent="NinePatchRect/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/ColorRect/LobbyBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.0
+margin_top = -18.0
+margin_right = 86.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "Back to Lobby"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -600.0
+margin_right = 640.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Battles are round based. Each round you choose either to attack or to dodge an attack of an opponent. 
+Each round you can also choose to use a magic spell or potions (if you have one). 
+Once both sides have finished their moves, the round ends and the game shows the result of the round. Battle ends when one side looses all their HP.
+
+Definitions:
+HP - Health points
+MP - Mana points
+HP reg - health point regenerations (each round the value added to your HP)
+MP reg - mana point regenerations (each round the value added to your MP)
+Attack - number of damage you can deal to your opponent
+Intelligence - number of intelegence used by certain magic spells to amplify magic damage
+Deffence - deffence agains basic attacks (opponents attacks - your defence = damage)
+Magic defence - deffence agains magic attacks (opponents magic damage - your magic defence = damage)
+XP - experience of your character
+
+Battle
+There are 3 types of attack and dodge options: Head, body, legs. Each type of attack deals different damage:
+Head attack deal 2x of your attack points
+Body attack deal 1x of your attack points
+Legs attack deal half of your attack points
+
+If you choose to hit a head and your opponent hits legs, you miss the attack (you will not deal attack damage to your opponent).
+However, If you hit body and your opponent hits legs, you deal 2x damage to your oppenent (equivalent to head damage).
+
+If you successifuly dodge one of the opponents attacks, you regenerate 2 time more than your usual HP reg points"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="NinePatchRect/ColorRect/LobbyBtn" to="." method="_on_LobbyBtn_pressed"]
