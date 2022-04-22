@@ -7,3 +7,5 @@ To run the game:
 2) Import all parts of the game: client, game-server, gateway-server and auth-server.
 3) Run in the following order: auth-server, gateway-server, game-server, client.
 4) Enjoy!
+
+Due to licensing issues the fonts are not available in the source-code. If you have any fonts, you can simply place them in the Assets/Fonts directory and modify the source-code accordingly.
