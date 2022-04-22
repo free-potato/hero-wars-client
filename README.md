@@ -1,6 +1,6 @@
 # hero-wars-client
 <p> This is a client-side application of a game developed as a final year university project for CS degree.
-<p> Do not judge the quality of the code - for the first time developing a multiplayer game and for the first time developing a game on a game engine!
+<p> Quality of the code is not great - the game was developed under the time pressure, and for the first time developing a multiplayer online game and for the first time developing a game on a game engine!
 
 To run the game:
 1) Download and run the Godot game engine: https://godotengine.org/download
